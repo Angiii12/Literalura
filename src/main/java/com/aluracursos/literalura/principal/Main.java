@@ -40,7 +40,7 @@ public class Main {
                     3 - List registered authors
                     4 - List authors alive in a given year
                     5 - List books by language
-                    0 - Salir
+                    0 - Exit
                     """;
             System.out.println(m);
             option = keyboard.nextInt();
@@ -131,10 +131,15 @@ public class Main {
                 BookData bookData = getBook();
 
                 if (bookData.results().isEmpty()) {
-                    throw new RuntimeException("No se encontraron libros para el nombre dado.");
+                    throw new RuntimeException("Book not found");
                 }
 
                 ResultData firstResult = bookData.results().get(0);
+                List<Book> existingBooks = bookRepository.findByTitle(firstResult.title());
+
+                if (!existingBooks.isEmpty()) {
+                    throw new RuntimeException("Book already in the data base");
+                }
 
                 Book book = new Book(firstResult);
                 Author author = new Author(firstResult.authors().get(0));
