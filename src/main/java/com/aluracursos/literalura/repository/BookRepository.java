@@ -12,4 +12,7 @@ import java.util.List;
 public interface BookRepository extends JpaRepository<Book, Long> {
     @Query("SELECT b FROM Book b WHERE b.languages = :lan")
     List<Book> findByLanguages(@Param("lan") String lan);
+    @Query("SELECT b FROM Book b WHERE b.title = :title")
+    List<Book> findByTitle(@Param("title") String title);
+
 }
