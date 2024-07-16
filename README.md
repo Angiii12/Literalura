@@ -1,5 +1,6 @@
 # Literalura
-![image](https://github.com/user-attachments/assets/1c7a2b23-21b3-489f-9258-d1cbde60759f)
+![image](https://github.com/user-attachments/assets/1c7a2b23-21b3-489f-9258-d1cbde60759f) \n
+
 Literalura es una aplicacion de Java que interactua con la API de libros Gutendex la cual nos proporciona infinidad de libros en distintos idiomas, en ella podras añadir libros, listarlos y filtrarlos.
 Estado del proyecto: Terminado (con posibles actualizaciones)
 Menu:
